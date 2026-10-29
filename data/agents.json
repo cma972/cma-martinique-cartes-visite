@@ -1,0 +1,166 @@
+{
+  "organisation": {
+    "nom": "Chambre de Métiers et de l’Artisanat de Martinique",
+    "nomCourt": "CMA Martinique",
+    "adresse": {
+      "rue": "2 rue du Temple",
+      "complement": "Morne Tartenson",
+      "codePostal": "97200",
+      "ville": "Fort-de-France",
+      "pays": "Martinique"
+    },
+    "siteWeb": "https://www.cma-martinique.com",
+    "siteWebAffiche": "cma-martinique.com",
+    "reseaux": [
+      { "type": "facebook", "libelle": "@CMA972", "url": "https://www.facebook.com/CMA972" },
+      { "type": "instagram", "libelle": "@CMA_MARTINIQUE", "url": "https://www.instagram.com/cma_martinique/" }
+    ],
+    "adresseDuSitePublic": ""
+  },
+
+  "agents": [
+    {
+      "id": "anne-catherine-brunet",
+      "actif": true,
+      "prenom": "Anne Catherine",
+      "nom": "Brunet",
+      "fonction": "Secrétaire Générale, Directrice des Services",
+      "service": "",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 32 22" },
+        { "type": "mobile", "numero": "0696 85 22 79" }
+      ],
+      "email": "ac.brunet@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "henri-salomon",
+      "actif": true,
+      "prenom": "Henri",
+      "nom": "Salomon",
+      "fonction": "Président de la Chambre de Métiers et de l’Artisanat de Martinique",
+      "service": "",
+      "telephones": [
+        { "type": "mobile", "numero": "0696 45 13 20" }
+      ],
+      "email": "h.salomon@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "cassandre-marie-louise",
+      "actif": true,
+      "prenom": "Cassandre",
+      "nom": "Marie-Louise",
+      "fonction": "Chargée de mission de conseil",
+      "service": "Centre de Formalité des Entreprises",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 32 22" }
+      ],
+      "email": "c.marie-louise@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "evariste-merkiled",
+      "actif": true,
+      "prenom": "Evariste",
+      "nom": "Merkiled",
+      "fonction": "Responsable",
+      "service": "Centre de Formalité des Entreprises",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 32 22" },
+        { "type": "mobile", "numero": "0696 89 24 31" }
+      ],
+      "email": "e.merkiled@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "sabrina-criart",
+      "actif": true,
+      "prenom": "Sabrina",
+      "nom": "Criart",
+      "fonction": "Adjointe de Direction",
+      "service": "Direction Entreprises – Pôle Développement Économique",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 29 96" },
+        { "type": "mobile", "numero": "0696 01 49 83" }
+      ],
+      "email": "s.criart@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "loren-gallonde",
+      "actif": true,
+      "prenom": "Loren",
+      "nom": "Gallonde",
+      "fonction": "Directrice",
+      "service": "Direction Entreprises",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 29 95" },
+        { "type": "mobile", "numero": "0696 27 92 17" }
+      ],
+      "email": "l.gallonde@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "michael-rameil",
+      "actif": true,
+      "prenom": "Michael",
+      "nom": "Rameil",
+      "fonction": "Chargé de développement économique",
+      "service": "Direction Entreprises – Pôle Développement Économique",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 72 75" },
+        { "type": "mobile", "numero": "0696 28 70 97" }
+      ],
+      "email": "m.rameil@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "robine-opont-saintirel",
+      "actif": true,
+      "prenom": "Robine",
+      "nom": "Opont-Saintirel",
+      "fonction": "Chargée de mission Eau et Assainissement",
+      "service": "Direction Entreprises – Pôle Développement Économique",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 28 04 26" },
+        { "type": "mobile", "numero": "0696 88 36 09" }
+      ],
+      "email": "r.opont_saintirel@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "yannick-prudent",
+      "actif": true,
+      "prenom": "Yannick",
+      "nom": "Prudent",
+      "fonction": "Directrice de CMA Formation",
+      "service": "",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 68 09 14" },
+        { "type": "mobile", "numero": "0696 01 99 46" }
+      ],
+      "email": "y.prudent@cma-martinique.com",
+      "photo": "",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée",
+      "reseaux": [
+        { "type": "facebook", "libelle": "@CMA972", "url": "https://www.facebook.com/CMA972" },
+        { "type": "instagram", "libelle": "@CMA_FORMATION_RIVIERE_SALEE", "url": "https://www.instagram.com/cma_formation_riviere_salee/" }
+      ]
+    },
+    {
+      "id": "sonia-trefle",
+      "actif": true,
+      "prenom": "Sonia",
+      "nom": "Trefle",
+      "fonction": "Conseillère énergie",
+      "service": "Direction Entreprises",
+      "telephones": [
+        { "type": "bureau", "numero": "0596 71 29 94" }
+      ],
+      "email": "s.trefle@cma-martinique.com",
+      "photo": ""
+    }
+  ]
+}

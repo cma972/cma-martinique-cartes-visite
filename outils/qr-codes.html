@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>QR codes – CMA Martinique</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/carte.css">
+  <style>
+    .outils { max-width: 980px; margin: 0 auto; padding: 32px max(16px, env(safe-area-inset-left, 0px)) 48px; }
+    .outils h1 { margin: 0 0 6px; font-family: var(--f-titre); font-weight: 400; color: var(--rouge); font-size: 30px; }
+    .outils > p { margin: 0 0 8px; color: var(--gris); max-width: 65ch; }
+    .base { margin: 18px 0 28px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .base label { font-weight: 600; font-size: 14px; }
+    .base input { flex: 1 1 320px; min-width: 0; padding: 12px 14px; border: 1px solid var(--filet); border-radius: 12px; font: inherit; font-size: 14px; }
+    .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .fiche { background: var(--blanc); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 3px rgba(35,31,32,.06); }
+    .fiche .qr-cadre { width: 100%; padding: 8px; }
+    .fiche h2 { margin: 0; font-family: var(--f-titre); font-weight: 400; font-size: 19px; color: var(--rouge); }
+    .fiche a.lien { font-size: 12.5px; color: var(--gris); overflow-wrap: anywhere; }
+    .fiche .qr-actions .btn-secondaire { min-height: 44px; font-size: 14px; }
+    .inactif { opacity: .5; }
+  </style>
+</head>
+<body>
+  <main class="outils">
+    <h1>QR codes des cartes de visite</h1>
+    <p>Page réservée au service communication (non référencée, non reliée aux cartes). Chaque QR code pointe vers l’adresse permanente de la carte de l’agent.</p>
+    <div class="base">
+      <label for="adresse-base">Adresse publique du site</label>
+      <input id="adresse-base" type="url" spellcheck="false">
+    </div>
+    <div id="grille" class="grille" aria-live="polite"></div>
+  </main>
+  <script>window.CMA_PAGE_OUTILS = true;</script>
+  <script src="../assets/vendor/qrcode.js"></script>
+  <script src="../assets/js/carte.js"></script>
+  <script>
+    (function () {
+      var O = window.CMA_OUTILS, COULEUR = "#A81A18", donnees;
+      var champ = document.getElementById("adresse-base");
+      var grille = document.getElementById("grille");
+
+      function fichier(a) {
+        return "QR-" + (a.prenom + "-" + a.nom).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9-]+/g, "-");
+      }
+
+      function afficher() {
+        var base = champ.value.trim().replace(/\/?$/, "/");
+        grille.innerHTML = donnees.agents.map(function (a, i) {
+          var url = base + a.id + "/";
+          return '<article class="fiche' + (a.actif === false ? " inactif" : "") + '">' +
+            '<div class="qr-cadre">' + O.qrEnSvg(O.creerQr(url), COULEUR) + "</div>" +
+            "<h2>" + O.echapper(O.nomComplet(a)) + (a.actif === false ? " (inactive)" : "") + "</h2>" +
+            '<a class="lien" href="' + O.echapper(url) + '" target="_blank" rel="noopener">' + O.echapper(url) + "</a>" +
+            '<div class="qr-actions">' +
+            '<button type="button" class="btn-secondaire" data-i="' + i + '" data-f="png">PNG</button>' +
+            '<button type="button" class="btn-secondaire" data-i="' + i + '" data-f="svg">SVG</button></div></article>';
+        }).join("");
+      }
+
+      grille.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-f]");
+        if (!b) return;
+        var a = donnees.agents[+b.getAttribute("data-i")];
+        var qr = O.creerQr(champ.value.trim().replace(/\/?$/, "/") + a.id + "/");
+        if (b.getAttribute("data-f") === "svg") {
+          O.telechargerFichier(new Blob([O.qrEnSvg(qr, COULEUR)], { type: "image/svg+xml" }), fichier(a) + ".svg");
+        } else {
+          O.qrEnPng(qr, COULEUR, O.nomComplet(a), donnees.organisation.nomCourt).then(function (blob) { O.telechargerFichier(blob, fichier(a) + ".png"); });
+        }
+      });
+
+      fetch("../data/agents.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (d) {
+        donnees = d;
+        champ.value = d.organisation.adresseDuSitePublic || new URL("../", location.href).href;
+        champ.addEventListener("input", afficher);
+        afficher();
+      });
+    })();
+  </script>
+</body>
+</html>
