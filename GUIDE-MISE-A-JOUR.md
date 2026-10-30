@@ -52,6 +52,12 @@ Si un message rouge apparaît sur la carte (« Chargement impossible »), c’es
 | `photo` | Facultatif. Laissez `""` (aucune photo). |
 | `logo` | Facultatif. Logo complémentaire affiché à droite du nom (ex. CMA Formation pour Yannick Prudent). Chemin du fichier image placé dans `assets/img/`. Absent ou `""` = pas de logo. |
 | `logoTexte` | Description du logo pour les personnes malvoyantes (ex. `"CMA Formation – Rivière-Salée"`). |
+| `etablissement` | Facultatif. `"riviere-salee"` pour les agents de CMA Formation Rivière-Salée : la carte affiche alors le nom et l’adresse de ce site. Absent = Fort-de-France. Les sites sont définis dans `"etablissements"`, en haut du fichier. |
+| `emailSecondaire` | Facultatif. Deuxième adresse e-mail (ex. adresse `edu`), affichée sous « Autre e-mail ». |
+
+**Numéros de téléphone** : un numéro peut avoir un libellé précis avec `"libelle"`, par exemple `{ "type": "bureau", "numero": "0596 68 09 14", "libelle": "Standard" }`. Sans libellé, la carte affiche « Bureau » ou « Mobile » selon le `type`.
+
+**Particules** : un nom comme `"de Percin"` s’affiche « de PERCIN » (la particule reste en minuscules).
 
 Les accents sont acceptés partout, sauf dans `id`.
 
@@ -134,6 +140,8 @@ Le QR code mènera alors vers une page « Page introuvable ».
   Chaque agent a son QR code, avec un bouton **PNG** (haute définition, nom de l’agent sous le code) et **SVG** (vectoriel, idéal pour l’imprimeur).
   Cette page n’est reliée à aucune carte et n’est pas référencée par Google.
 - **Un agent depuis sa carte** : bouton **QR code** en bas de sa carte, puis PNG, SVG ou « Partager le QR code ».
+
+- **Cartes papier avec QR code** : ouvrez `https://cma972.github.io/cma-martinique-cartes-visite/outils/impression.html`, puis cliquez sur **Imprimer**. La page prépare des planches A4 de 10 cartes (95 × 55 mm) : une feuille recto (QR code nominatif) et une feuille verso (visuel CMA). Réglages d’impression : échelle 100 %, marges « Aucune », recto verso bord long, papier épais.
 
 Un QR code ne change jamais tant que le champ `id` reste le même.
 

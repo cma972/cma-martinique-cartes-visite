@@ -12,12 +12,48 @@
     "siteWeb": "https://www.cma-martinique.com",
     "siteWebAffiche": "cma-martinique.com",
     "reseaux": [
-      { "type": "facebook", "libelle": "@CMA972", "url": "https://www.facebook.com/CMA972" },
-      { "type": "instagram", "libelle": "@CMA_MARTINIQUE", "url": "https://www.instagram.com/cma_martinique/" }
+      {
+        "type": "facebook",
+        "libelle": "@CMA972",
+        "url": "https://www.facebook.com/CMA972"
+      },
+      {
+        "type": "instagram",
+        "libelle": "@CMA_MARTINIQUE",
+        "url": "https://www.instagram.com/cma_martinique/"
+      }
     ],
-    "adresseDuSitePublic": ""
+    "adresseDuSitePublic": "https://cma972.github.io/cma-martinique-cartes-visite/",
+    "etablissements": {
+      "riviere-salee": {
+        "nom": "CMA Formation Rivière-Salée",
+        "adresse": {
+          "rue": "Quartier La Laugier",
+          "complement": "",
+          "codePostal": "97215",
+          "ville": "Rivière-Salée",
+          "pays": "Martinique"
+        },
+        "reseaux": [
+          {
+            "type": "facebook",
+            "libelle": "@CMA972",
+            "url": "https://www.facebook.com/CMA972"
+          },
+          {
+            "type": "instagram",
+            "libelle": "@CMA_MARTINIQUE",
+            "url": "https://www.instagram.com/cma_martinique/"
+          },
+          {
+            "type": "instagram",
+            "libelle": "@CMA_FORMATION_RIVIERE_SALEE",
+            "url": "https://www.instagram.com/cma_formation_riviere_salee/"
+          }
+        ]
+      }
+    }
   },
-
   "agents": [
     {
       "id": "anne-catherine-brunet",
@@ -27,8 +63,14 @@
       "fonction": "Secrétaire Générale, Directrice des Services",
       "service": "",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 32 22" },
-        { "type": "mobile", "numero": "0696 85 22 79" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 85 22 79"
+        }
       ],
       "email": "ac.brunet@cma-martinique.com",
       "photo": ""
@@ -41,7 +83,10 @@
       "fonction": "Président de la Chambre de Métiers et de l’Artisanat de Martinique",
       "service": "",
       "telephones": [
-        { "type": "mobile", "numero": "0696 45 13 20" }
+        {
+          "type": "mobile",
+          "numero": "0696 45 13 20"
+        }
       ],
       "email": "h.salomon@cma-martinique.com",
       "photo": ""
@@ -54,7 +99,10 @@
       "fonction": "Chargée de mission de conseil",
       "service": "Centre de Formalité des Entreprises",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 32 22" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        }
       ],
       "email": "c.marie-louise@cma-martinique.com",
       "photo": ""
@@ -67,8 +115,14 @@
       "fonction": "Responsable",
       "service": "Centre de Formalité des Entreprises",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 32 22" },
-        { "type": "mobile", "numero": "0696 89 24 31" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 89 24 31"
+        }
       ],
       "email": "e.merkiled@cma-martinique.com",
       "photo": ""
@@ -81,8 +135,14 @@
       "fonction": "Adjointe de Direction",
       "service": "Direction Entreprises – Pôle Développement Économique",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 29 96" },
-        { "type": "mobile", "numero": "0696 01 49 83" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 29 96"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 01 49 83"
+        }
       ],
       "email": "s.criart@cma-martinique.com",
       "photo": ""
@@ -95,8 +155,14 @@
       "fonction": "Directrice",
       "service": "Direction Entreprises",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 29 95" },
-        { "type": "mobile", "numero": "0696 27 92 17" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 29 95"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 27 92 17"
+        }
       ],
       "email": "l.gallonde@cma-martinique.com",
       "photo": ""
@@ -109,8 +175,14 @@
       "fonction": "Chargé de développement économique",
       "service": "Direction Entreprises – Pôle Développement Économique",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 72 75" },
-        { "type": "mobile", "numero": "0696 28 70 97" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 72 75"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 28 70 97"
+        }
       ],
       "email": "m.rameil@cma-martinique.com",
       "photo": ""
@@ -123,8 +195,14 @@
       "fonction": "Chargée de mission Eau et Assainissement",
       "service": "Direction Entreprises – Pôle Développement Économique",
       "telephones": [
-        { "type": "bureau", "numero": "0596 28 04 26" },
-        { "type": "mobile", "numero": "0696 88 36 09" }
+        {
+          "type": "bureau",
+          "numero": "0596 28 04 26"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 88 36 09"
+        }
       ],
       "email": "r.opont_saintirel@cma-martinique.com",
       "photo": ""
@@ -137,16 +215,35 @@
       "fonction": "Directrice de CMA Formation",
       "service": "",
       "telephones": [
-        { "type": "bureau", "numero": "0596 68 09 14" },
-        { "type": "mobile", "numero": "0696 01 99 46" }
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 01 99 46"
+        }
       ],
       "email": "y.prudent@cma-martinique.com",
       "photo": "",
       "logo": "assets/img/logo-cma-formation-riviere-salee.png",
       "logoTexte": "CMA Formation – Rivière-Salée",
       "reseaux": [
-        { "type": "facebook", "libelle": "@CMA972", "url": "https://www.facebook.com/CMA972" },
-        { "type": "instagram", "libelle": "@CMA_FORMATION_RIVIERE_SALEE", "url": "https://www.instagram.com/cma_formation_riviere_salee/" }
+        {
+          "type": "facebook",
+          "libelle": "@CMA972",
+          "url": "https://www.facebook.com/CMA972"
+        },
+        {
+          "type": "instagram",
+          "libelle": "@CMA_MARTINIQUE",
+          "url": "https://www.instagram.com/cma_martinique/"
+        },
+        {
+          "type": "instagram",
+          "libelle": "@CMA_FORMATION_RIVIERE_SALEE",
+          "url": "https://www.instagram.com/cma_formation_riviere_salee/"
+        }
       ]
     },
     {
@@ -157,9 +254,376 @@
       "fonction": "Conseillère énergie",
       "service": "Direction Entreprises",
       "telephones": [
-        { "type": "bureau", "numero": "0596 71 29 94" }
+        {
+          "type": "bureau",
+          "numero": "0596 71 29 94"
+        }
       ],
       "email": "s.trefle@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "alex-tastet",
+      "actif": true,
+      "prenom": "Alex",
+      "nom": "Tastet",
+      "fonction": "Directeur Adjoint des Services",
+      "service": "Direction Générale",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 85 22 71"
+        }
+      ],
+      "email": "a.tastet@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "betty-clovis",
+      "actif": true,
+      "prenom": "Betty",
+      "nom": "Clovis",
+      "fonction": "Assistante Ressources Humaines",
+      "service": "Direction Ressources Humaines",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22",
+          "libelle": "Standard"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 71 38 54"
+        }
+      ],
+      "email": "b.clovis@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "carine-cretinoir",
+      "actif": true,
+      "prenom": "Carine",
+      "nom": "Cretinoir",
+      "fonction": "Contrôle de Gestion / Comptabilité",
+      "service": "Service Finances",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        }
+      ],
+      "email": "c.cretinoir@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "marie-ange-leopold-bolinois",
+      "actif": true,
+      "prenom": "Marie-Ange",
+      "nom": "Leopold Bolinois",
+      "fonction": "Assistante en Formalités",
+      "service": "Centre de Formalités des Entreprises / Guichet Unique",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        }
+      ],
+      "email": "ma.leopold@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "laetitia-lavenaire",
+      "actif": true,
+      "prenom": "Laetitia",
+      "nom": "Lavenaire",
+      "fonction": "Assistante de Direction",
+      "service": "Secrétariat de Direction",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 68 19 68",
+          "libelle": "Ligne directe"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14",
+          "libelle": "Standard"
+        }
+      ],
+      "email": "l.lavenaire@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "nikita-ponsar",
+      "actif": true,
+      "prenom": "Nikita",
+      "nom": "Ponsar",
+      "fonction": "Responsable Pédagogique de CMA Formation",
+      "service": "Pôle Pédagogique",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 28 70 98"
+        }
+      ],
+      "email": "n.ponsar@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée",
+      "emailSecondaire": "n.ponsar@edu.cma-martinique.com"
+    },
+    {
+      "id": "muriane-volberg",
+      "actif": true,
+      "prenom": "Muriane",
+      "nom": "Volberg",
+      "fonction": "Conseillère / Référent Qualité",
+      "service": "Centre d’Aide à la Décision",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 03 18 31"
+        }
+      ],
+      "email": "m.volberg@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "celine-palain-saint-agathe",
+      "actif": true,
+      "prenom": "Céline",
+      "nom": "Palain-Saint-Agathe",
+      "fonction": "Conseillère – Référent handicap",
+      "service": "Pôle Recrutement – Relation Entreprise",
+      "telephones": [
+        {
+          "type": "mobile",
+          "numero": "0696 02 28 39"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        }
+      ],
+      "email": "c.palain-saint-agathe@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "celine-cabrera",
+      "actif": true,
+      "prenom": "Céline",
+      "nom": "Cabrera",
+      "fonction": "Conseillère – Médiatrice",
+      "service": "Pôle Recrutement – Relation Entreprise",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 28 04 24"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 88 44 73"
+        }
+      ],
+      "email": "c.cabrera@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "maguy-grosdesormeaux",
+      "actif": true,
+      "prenom": "Maguy",
+      "nom": "Grosdesormeaux",
+      "fonction": "CPE",
+      "service": "Pôle Pédagogique",
+      "telephones": [
+        {
+          "type": "mobile",
+          "numero": "0696 40 39 18"
+        }
+      ],
+      "email": "m.grosdesormeaux@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "nadiege-de-percin",
+      "actif": true,
+      "prenom": "Nadiège",
+      "nom": "de Percin",
+      "fonction": "Attachée Technique",
+      "service": "Formation Professionnelle Continue",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 61 58 73"
+        }
+      ],
+      "email": "n.depercin@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "sandra-cantinol",
+      "actif": true,
+      "prenom": "Sandra",
+      "nom": "Cantinol",
+      "fonction": "Assistante Pédagogique",
+      "service": "Service Formation Professionnelle et Continue",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 61 20",
+          "libelle": "Ligne directe"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14",
+          "libelle": "Standard"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 61 58 73"
+        }
+      ],
+      "email": "s.cantinol@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "rose-elia-manoir",
+      "actif": true,
+      "prenom": "Rose-Elia",
+      "nom": "Manoir",
+      "fonction": "Comptable",
+      "service": "Service Comptabilité-Finance",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 32 22"
+        }
+      ],
+      "email": "re.manoir@cma-martinique.com",
+      "photo": ""
+    },
+    {
+      "id": "maryse-claveau",
+      "actif": true,
+      "prenom": "Maryse",
+      "nom": "Claveau",
+      "fonction": "Responsable d’Unité Administrative et Pédagogique",
+      "service": "",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 28 04 28"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14",
+          "libelle": "Standard"
+        }
+      ],
+      "email": "m.claveau@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee",
+      "logo": "assets/img/logo-cma-formation-riviere-salee.png",
+      "logoTexte": "CMA Formation – Rivière-Salée"
+    },
+    {
+      "id": "marc-vetro",
+      "actif": true,
+      "prenom": "Marc",
+      "nom": "Vetro",
+      "fonction": "Responsable Informatique",
+      "service": "",
+      "telephones": [
+        {
+          "type": "mobile",
+          "numero": "0696 03 11 26"
+        },
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        }
+      ],
+      "email": "m.vetro@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee"
+    },
+    {
+      "id": "nicolas-belson",
+      "actif": true,
+      "prenom": "Nicolas",
+      "nom": "Belson",
+      "fonction": "",
+      "service": "Service Informatique",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 68 09 14"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 88 44 91"
+        }
+      ],
+      "email": "n.belson@cma-martinique.com",
+      "photo": "",
+      "etablissement": "riviere-salee"
+    },
+    {
+      "id": "kyllian-eugene",
+      "actif": true,
+      "prenom": "Kyllian",
+      "nom": "Eugene",
+      "fonction": "Chargé de communication et marketing",
+      "service": "Marketing & Communication",
+      "telephones": [
+        {
+          "type": "bureau",
+          "numero": "0596 71 29 99"
+        },
+        {
+          "type": "mobile",
+          "numero": "0696 61 58 84"
+        }
+      ],
+      "email": "k.eugene@cma-martinique.com",
       "photo": ""
     }
   ]

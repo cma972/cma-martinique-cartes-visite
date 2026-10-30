@@ -31,7 +31,8 @@ cma-martinique-cartes-visite/
 │   └── index.html             Page identique pour tous les agents
 ├── …                          (un dossier par agent)
 ├── outils/
-│   └── qr-codes.html          Génération des QR codes (réservée au service communication)
+│   ├── qr-codes.html          Génération des QR codes (réservée au service communication)
+│   └── impression.html        Planches A4 de cartes papier avec QR code
 └── assets/                    Design, polices, logo, scripts (à ne pas modifier)
 ```
 

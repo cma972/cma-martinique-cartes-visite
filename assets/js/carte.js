@@ -83,8 +83,26 @@
     return n;
   }
 
+  /* « de Percin » → particule « de » + patronyme « Percin » (affiché DE en minuscules) */
+  function decouperNom(nom) {
+    var m = /^(de|du|des|d’|d')\s*(.+)$/i.exec(nom);
+    return m ? { particule: m[1], patronyme: m[2] } : { particule: "", patronyme: nom };
+  }
+
   function nomComplet(agent) {
-    return agent.prenom + " " + agent.nom.toUpperCase();
+    var n = decouperNom(agent.nom);
+    return agent.prenom + " " + (n.particule ? n.particule + " " : "") + n.patronyme.toUpperCase();
+  }
+
+  /* Site de rattachement de l'agent (Fort-de-France par défaut, ou un autre site défini dans "etablissements") */
+  function etablissement(org, agent) {
+    var e = (org.etablissements || {})[agent.etablissement] || {};
+    return { nom: e.nom || org.nom, adresse: e.adresse || org.adresse || {}, reseaux: e.reseaux || org.reseaux || [] };
+  }
+
+  /* Libellé d'un numéro : "libelle" s'il est renseigné, sinon Mobile / Bureau */
+  function libelleTel(t) {
+    return t.libelle || (t.type === "mobile" ? "Mobile" : "Bureau");
   }
 
   function slugDepuisAdresse() {
@@ -149,7 +167,7 @@
   }
 
   function creerVcard(org, agent, adresse) {
-    var a = org.adresse || {};
+    var a = etablissement(org, agent).adresse;
     var lignes = [
       "BEGIN:VCARD",
       "VERSION:3.0",
@@ -163,6 +181,7 @@
       lignes.push("TEL;TYPE=" + type + ":" + numeroInternational(t.numero));
     });
     if (agent.email) lignes.push("EMAIL;TYPE=INTERNET,WORK:" + agent.email);
+    if (agent.emailSecondaire) lignes.push("EMAIL;TYPE=INTERNET:" + agent.emailSecondaire);
     if (a.rue) {
       lignes.push("ADR;TYPE=WORK:;;" + vcardEchapper(a.rue + (a.complement ? ", " + a.complement : "")) + ";" +
         vcardEchapper(a.ville) + ";;" + vcardEchapper(a.codePostal) + ";" + vcardEchapper(a.pays));
@@ -243,8 +262,10 @@
 
   function htmlCarte(org, agent) {
     var tels = agent.telephones || [];
-    var reseaux = agent.reseaux || org.reseaux || [];
-    var a = org.adresse || {};
+    var etab = etablissement(org, agent);
+    var reseaux = agent.reseaux || etab.reseaux;
+    var a = etab.adresse;
+    var nomDecoupe = decouperNom(agent.nom);
     var h = "";
 
     h += '<section class="recto">' + recto(org.siteWebAffiche) + "</section>";
@@ -253,7 +274,7 @@
     /* Identité */
     h += '<header class="identite">';
     if (agent.photo) h += '<img class="photo" src="' + echapper(agent.photo) + '" alt="" width="76" height="76">';
-    h += '<div class="identite__texte"><h1 class="nom"><span class="prenom">' + echapper(agent.prenom) + '</span> <span class="patronyme">' + echapper(agent.nom) + "</span></h1>";
+    h += '<div class="identite__texte"><h1 class="nom"><span class="prenom">' + echapper(agent.prenom) + '</span> ' + (nomDecoupe.particule ? echapper(nomDecoupe.particule) + " " : "") + '<span class="patronyme">' + echapper(nomDecoupe.patronyme) + "</span></h1>";
     if (agent.fonction) h += '<p class="fonction">' + echapper(agent.fonction) + "</p>";
     if (agent.service) h += '<p class="service">' + echapper(agent.service) + "</p>";
     h += "</div>";
@@ -274,15 +295,16 @@
     h += '<section aria-labelledby="titre-coordonnees"><h2 class="bloc-titre" id="titre-coordonnees">Coordonnées</h2><ul class="coordonnees">';
     tels.forEach(function (t) {
       var mobile = t.type === "mobile";
-      h += ligneCoordonnee("tel:" + numeroInternational(t.numero), mobile ? "mobile" : "telephone", mobile ? "Mobile" : "Bureau", t.numero, "tel");
+      h += ligneCoordonnee("tel:" + numeroInternational(t.numero), mobile ? "mobile" : "telephone", libelleTel(t), t.numero, "tel");
     });
     if (agent.email) h += ligneCoordonnee("mailto:" + agent.email, "email", "E-mail", agent.email, "email");
+    if (agent.emailSecondaire) h += ligneCoordonnee("mailto:" + agent.emailSecondaire, "email", "Autre e-mail", agent.emailSecondaire, "email");
     if (org.siteWeb) h += ligneCoordonnee(org.siteWeb, "web", "Site internet", org.siteWebAffiche || org.siteWeb, "", true);
     h += "</ul></section>";
 
     /* Bloc institutionnel */
     h += '<section class="institution" aria-label="Établissement">';
-    h += '<p class="institution__nom">' + echapper(org.nom) + "</p>";
+    h += '<p class="institution__nom">' + echapper(etab.nom) + "</p>";
     if (a.rue) {
       h += '<a class="institution__adresse" href="' + echapper(lienAdresse(a)) + '" target="_blank" rel="noopener">' +
         echapper(a.rue + (a.complement ? " - " + a.complement : "")) + "<br>" + echapper(a.codePostal + " " + a.ville) + "</a>";
@@ -382,7 +404,7 @@
         var tels = agent.telephones || [];
         if (tels.length === 1) { location.href = "tel:" + numeroInternational(tels[0].numero); return; }
         ouvrirFeuille("feuille-appel", "Appeler " + agent.prenom, '<ul class="choix">' + tels.map(function (t) {
-          return boutonChoix({ href: "tel:" + numeroInternational(t.numero) }, t.type === "mobile" ? "mobile" : "telephone", t.numero, t.type === "mobile" ? "Mobile" : "Bureau");
+          return boutonChoix({ href: "tel:" + numeroInternational(t.numero) }, t.type === "mobile" ? "mobile" : "telephone", t.numero, libelleTel(t));
         }).join("") + "</ul>");
       },
 
@@ -450,7 +472,8 @@
   /* Fonctions partagées avec la page outils/qr-codes.html */
   window.CMA_OUTILS = {
     creerQr: creerQr, qrEnSvg: qrEnSvg, qrEnPng: qrEnPng,
-    telechargerFichier: telechargerFichier, nomComplet: nomComplet, echapper: echapper
+    telechargerFichier: telechargerFichier, nomComplet: nomComplet, echapper: echapper,
+    recto: recto, logoCma: LOGO_CMA
   };
   if (window.CMA_PAGE_OUTILS) return;
 
